@@ -1,0 +1,95 @@
+aid: triblio
+name: Triblio
+description: >-
+  Triblio is an account-based marketing (ABM) platform now owned by Foundry,
+  the marketing services and data unit of International Data Group (IDG).
+  Originally founded in Reston, Virginia, Triblio was acquired by IDG/Foundry
+  in June 2020 as the cornerstone of a multi-year strategy to combine first-
+  party publisher data, third-party intent signals, and ABM advertising,
+  web personalization, and sales acceleration into a single platform. The
+  product combines account-based advertising, intent-driven audience
+  segmentation, website personalization, and a Smart Score that ranks
+  accounts using behavioral signals from first-party web visits, third-party
+  intent providers (notably Bombora Company Surge and G2 intent), CRM data,
+  and Foundry's own publisher network. Triblio integrates with major CRMs
+  and marketing automation systems including Salesforce, HubSpot, Microsoft
+  Dynamics 365, SugarCRM, Marketo, Pardot, LinkedIn Campaign Manager,
+  Google Analytics, and Slack. Foundry positions Triblio as the engine
+  behind its broader Sales Acceleration and Foundry ABM offerings, with
+  intent data feeds from Bombora ingested weekly and G2 intent ingested
+  nightly. Triblio does not publish a public developer API portal, OpenAPI
+  specification, or open-source SDKs; the GitHub organization at
+  github.com/triblio was archived in January 2026 with no public repos.
+  Customer integrations are delivered through pre-built CRM and MAP
+  connectors, an Apps Marketplace, and platform-internal automation rather
+  than a self-serve developer API.
+type: Index
+position: Provider
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Account Based Marketing
+  - ABM
+  - Advertising
+  - Intent Data
+  - Marketing Technology
+  - MarTech
+  - B2B Marketing
+  - Sales Acceleration
+  - Web Personalization
+  - Audience Segmentation
+  - Demand Generation
+  - CRM Integration
+  - Foundry
+  - IDG
+url: https://raw.githubusercontent.com/api-evangelist/triblio/refs/heads/main/apis.yml
+created: '2026-05-25'
+modified: '2026-05-25'
+specificationVersion: '0.20'
+apis: []
+common:
+  - type: Website
+    url: https://www.triblio.com
+  - type: Parent
+    url: https://foundryco.com
+  - type: Product
+    url: https://foundryco.com/our-solutions/account-based-marketing/
+  - type: Platform
+    url: https://www.triblio.com/platform
+  - type: IntentData
+    url: https://www.triblio.com/platform/intent-data
+  - type: Advertising
+    url: https://www.triblio.com/platform/advertising
+  - type: WebPersonalization
+    url: https://www.triblio.com/platform/web-personalization
+  - type: SalesAcceleration
+    url: https://foundryco.com/news/foundry-launches-sales-acceleration-powered-by-triblio/
+  - type: KnowledgeBase
+    url: https://learning.triblio.com
+  - type: HubSpotMarketplace
+    url: https://ecosystem.hubspot.com/marketplace/apps/triblio
+  - type: BomboraIntegration
+    url: https://bombora.com/integration/triblio/
+  - type: About
+    url: https://www.triblio.com/company/about
+  - type: Blog
+    url: https://www.triblio.com/blog
+  - type: FoundryBlog
+    url: https://foundryco.com/blog/
+  - type: Press
+    url: https://foundryco.com/press/
+  - type: Careers
+    url: https://foundryco.com/work-here/
+  - type: Contact
+    url: https://foundryco.com/contact-us/
+  - type: AcquisitionAnnouncement
+    url: https://foundryco.com/blog/idg-acquires-triblio-heres-why-it-matters/
+  - type: GitHub
+    url: https://github.com/triblio
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/triblio
+  - type: Twitter
+    url: https://twitter.com/triblio
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
