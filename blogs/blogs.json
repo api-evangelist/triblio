@@ -2,18 +2,11 @@
   "repo": "triblio",
   "feeds": [
     {
-      "source": "https://www.triblio.com/blog",
-      "saved": 0,
-      "error": "DNS ENOTFOUND (domain dead)"
-    },
-    {
-      "source": "https://foundryco.com/blog/",
-      "feed_url": "",
-      "saved": 0,
-      "method": "agent-scrape"
+      "source": "https://www.triblio.com/company/about",
+      "error": "URLError"
     }
   ],
-  "fetched": "2026-06-27T13:17:27Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "post_count": 0,
-  "agent_pulled": "2026-06-27"
+  "agent_pulled": "2026-07-04"
 }
