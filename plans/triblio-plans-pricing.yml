@@ -1,0 +1,41 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  https://foundryco.com/our-solutions/software-q2/ (the live Foundry ABM product
+  page, "powered by Triblio") and https://foundryco.com/foundry-software-demo/;
+  the historical Triblio pricing page at https://triblio.com/pricing no longer
+  resolves.
+name: Triblio — plans and pricing
+slug: triblio
+
+plan_count: 0
+currency: null
+public_pricing: false
+
+summary: >-
+  Triblio publishes no plans, tiers, or prices. The historical pricing page,
+  https://triblio.com/pricing, is still linked from the LIVE Foundry ABM product
+  page but the domain no longer resolves, so the link is dead. The surviving
+  Foundry ABM page routes every commercial question to a HubSpot demo-request
+  form rather than to a rate card. This is a contact-sales-only motion:
+  plan_count is 0 by measurement, not by omission.
+
+plans: []
+
+evidence:
+  - url: https://foundryco.com/our-solutions/software-q2/
+    status: 200
+    note: >-
+      Live product page for "Foundry ABM, the account-based orchestration
+      platform, powered by Triblio". Its pricing link points at
+      https://triblio.com/pricing.
+  - url: https://triblio.com/pricing
+    status: null
+    note: DNS failure — triblio.com has no A record. The linked pricing page is gone.
+  - url: https://foundryco.com/foundry-software-demo/
+    status: 200
+    note: >-
+      "Book a demo" form (share.hsforms.com) stands in for published pricing.
+      No tiers, quotas, or overage terms are stated anywhere publicly.
+
+checked: '2026-08-12'

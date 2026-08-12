@@ -22,7 +22,15 @@ description: >-
   github.com/triblio was archived in January 2026 with no public repos.
   Customer integrations are delivered through pre-built CRM and MAP
   connectors, an Apps Marketplace, and platform-internal automation rather
-  than a self-serve developer API.
+  than a self-serve developer API. As of a 2026-08-12 probe the Triblio brand
+  has no web surface of its own: triblio.com remains registered to MarkMonitor
+  through 2027 but its Route 53 hosted zone has been deleted, so the marketing
+  site, the app.triblio.com login, and the learning.triblio.com knowledge base
+  all fail DNS resolution. The product now ships as "Foundry ABM, powered by
+  Triblio" at foundryco.com, and the knowledge base has moved to
+  learning.foundryco.com — a Cloudflare-fronted CNAME to triblio.zendesk.com.
+  Foundry's sole developer portal covers the KickFire APIs, a different Foundry
+  product, and is not attributed to Triblio.
 type: Index
 accessModel:
   pricing: unknown
@@ -55,37 +63,31 @@ tags:
   - IDG
 url: https://raw.githubusercontent.com/api-evangelist/triblio/refs/heads/main/apis.yml
 created: '2026-05-25'
-modified: '2026-05-25'
+modified: '2026-08-12'
 specificationVersion: '0.20'
 apis: []
 common:
   - type: Website
-    url: https://www.triblio.com
+    url: https://foundryco.com/our-solutions/software-q2/
   - type: Parent
     url: https://foundryco.com
   - type: Product
     url: https://foundryco.com/our-solutions/account-based-marketing/
-  - type: Platform
-    url: https://www.triblio.com/platform
   - type: IntentData
-    url: https://www.triblio.com/platform/intent-data
+    url: https://foundryco.com/our-solutions/data/intent-data/
   - type: Advertising
-    url: https://www.triblio.com/platform/advertising
+    url: https://foundryco.com/our-solutions/advertising/
   - type: WebPersonalization
-    url: https://www.triblio.com/platform/web-personalization
-  - type: SalesAcceleration
-    url: https://foundryco.com/news/foundry-launches-sales-acceleration-powered-by-triblio/
+    url: https://foundryco.com/our-solutions/website-visitor-tracking/
   - type: KnowledgeBase
-    url: https://learning.triblio.com
+    url: https://learning.foundryco.com/hc/en-us
+  - type: Support
+    url: https://learning.foundryco.com/hc/en-us
   - type: HubSpotMarketplace
     url: https://ecosystem.hubspot.com/marketplace/apps/triblio
   - type: BomboraIntegration
     url: https://bombora.com/integration/triblio/
-  - type: About
-    url: https://www.triblio.com/company/about
   - type: Blog
-    url: https://www.triblio.com/blog
-  - type: FoundryBlog
     url: https://foundryco.com/blog/
   - type: Press
     url: https://foundryco.com/press/
@@ -95,12 +97,101 @@ common:
     url: https://foundryco.com/contact-us/
   - type: AcquisitionAnnouncement
     url: https://foundryco.com/blog/idg-acquires-triblio-heres-why-it-matters/
-  - type: GitHub
+  - type: TermsOfService
+    url: https://foundryco.com/terms-of-service-agreement/
+  - type: PrivacyPolicy
+    url: https://foundryco.com/privacy-policy/
+  - type: Compliance
+    url: https://foundryco.com/about-us/privacy-compliance/
+  - type: GitHubOrganization
     url: https://github.com/triblio
   - type: LinkedIn
     url: https://www.linkedin.com/company/triblio
   - type: Twitter
     url: https://twitter.com/triblio
+  - type: Packages
+    url: packages/triblio-packages.yml
+  - type: Plans
+    url: plans/triblio-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/triblio-rate-limits.yml
+  - type: DomainSecurity
+    url: security/triblio-domain-security.yml
+  - type: LLMsTxt
+    url: llms/triblio-llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-12'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    The Triblio brand has been fully absorbed into Foundry and its entire web
+    surface decommissioned — triblio.com is still registered to MarkMonitor and
+    delegated to four Route 53 nameservers, but those nameservers answer REFUSED
+    because the hosted zone was deleted, so the marketing site, the application
+    at app.triblio.com and the knowledge base at learning.triblio.com all fail
+    DNS resolution; the product now ships as "Foundry ABM, powered by Triblio"
+    and Foundry's only developer portal documents the KickFire APIs, a different
+    product, which must not be attributed here.
+  evidence:
+    - url: https://www.triblio.com
+      status: 0
+    - url: https://learning.triblio.com/
+      status: 0
+    - url: https://intent.foundryco.com/login
+      status: 503
+    - url: https://learning.foundryco.com/hc/en-us
+      status: 403
+    - url: https://foundryco.com/our-solutions/software-q2/
+      status: 200
+    - url: https://foundryco.com/developers/
+      status: 200
+  checked: '2026-08-12'
+x-decommissioned-links:
+  note: >-
+    Pointers removed from common[] on 2026-08-12 because the host no longer
+    resolves. Retained here as provenance so a later pass does not silently
+    re-add them. Status 0 means DNS resolution failed, not an HTTP response.
+  checked: '2026-08-12'
+  links:
+    - type: Website
+      url: https://www.triblio.com
+      status: 0
+    - type: Platform
+      url: https://www.triblio.com/platform
+      status: 0
+    - type: IntentData
+      url: https://www.triblio.com/platform/intent-data
+      status: 0
+    - type: Advertising
+      url: https://www.triblio.com/platform/advertising
+      status: 0
+    - type: WebPersonalization
+      url: https://www.triblio.com/platform/web-personalization
+      status: 0
+    - type: About
+      url: https://www.triblio.com/company/about
+      status: 0
+    - type: Blog
+      url: https://www.triblio.com/blog
+      status: 0
+    - type: KnowledgeBase
+      url: https://learning.triblio.com
+      status: 0
+    - type: SalesAcceleration
+      url: https://foundryco.com/news/foundry-launches-sales-acceleration-powered-by-triblio/
+      status: 404
+x-ownership-note: >-
+  Foundry's developer portal at https://foundryco.com/developers/ documents the
+  KickFire APIs only — base https://api.kickfire.com, endpoints for company,
+  domain2ip, ip2geo, ip2country, logo and name2website. KickFire is a separate
+  Foundry acquisition, not the Triblio ABM platform, and its contract is
+  deliberately NOT recorded against this profile. Triblio itself consumed third-
+  party APIs (Salesforce REST, Marketo REST, SugarCRM OAuth, G2 intent keys via
+  the platform's Setup > "Web Sites & API" tab) and never published one.

@@ -1,0 +1,79 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  Unauthenticated registry searches against npm, PyPI, RubyGems, crates.io,
+  NuGet, Maven Central and Packagist, plus the GitHub organization
+  github.com/triblio and the Foundry ABM product page.
+name: Triblio — client packages / SDKs
+slug: triblio
+
+package_count: 0
+official_count: 0
+
+summary: >-
+  Triblio publishes no client libraries or SDKs in any public package registry,
+  and never did. Seven registries were queried by name and all returned zero
+  results. The GitHub organization github.com/triblio exists but reports
+  public_repos = 0 and was archived on 2026-01-05, so there is no source
+  distribution either. Integration with Triblio was always delivered through
+  pre-built connectors that call the OTHER side's API — Salesforce REST,
+  Marketo REST, HubSpot, Microsoft Dynamics, SugarCRM OAuth — rather than
+  through a Triblio SDK calling a Triblio API. No SDKs pointer is emitted.
+
+packages: []
+
+registries_searched:
+  - registry: npm
+    endpoint: https://registry.npmjs.org/-/v1/search?text=triblio
+    status: 200
+    matches: 0
+    version: null
+    published: null
+  - registry: pypi
+    endpoint: https://pypi.org/pypi/triblio/json
+    status: 404
+    matches: 0
+    version: null
+    published: null
+  - registry: rubygems
+    endpoint: https://rubygems.org/api/v1/search.json?query=triblio
+    status: 200
+    matches: 0
+    version: null
+    published: null
+  - registry: crates.io
+    endpoint: https://crates.io/api/v1/crates?q=triblio
+    status: 200
+    matches: 0
+    version: null
+    published: null
+  - registry: nuget
+    endpoint: https://azuresearch-usnc.nuget.org/query?q=triblio
+    status: 200
+    matches: 0
+    version: null
+    published: null
+  - registry: maven-central
+    endpoint: https://search.maven.org/solrsearch/select?q=triblio
+    status: 200
+    matches: 0
+    version: null
+    published: null
+  - registry: packagist
+    endpoint: https://packagist.org/search.json?q=triblio
+    status: 200
+    matches: 0
+    version: null
+    published: null
+
+source_repositories:
+  - org: https://github.com/triblio
+    status: 200
+    public_repos: 0
+    archived_at: '2026-01-05'
+    note: >-
+      Organization record still resolves via api.github.com/orgs/triblio and
+      lists blog "http://www.triblio.com" — a URL that no longer resolves. Zero
+      public repositories, archived January 2026.
+
+checked: '2026-08-12'

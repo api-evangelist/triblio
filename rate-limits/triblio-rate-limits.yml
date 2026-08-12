@@ -1,0 +1,45 @@
+generated: '2026-08-12'
+method: searched
+source: >-
+  Searched the Foundry ABM product surface and the migrated Triblio knowledge
+  base for any published API rate limit, quota, throttle, or 429 behaviour. The
+  original documentation host, learning.triblio.com, no longer resolves; its
+  successor, learning.foundryco.com, answers Cloudflare 403 to every request.
+name: Triblio — rate limits
+slug: triblio
+
+limit_count: 0
+headers_documented: false
+exhaustion_status_code: null
+
+summary: >-
+  Triblio documents no rate limits, because Triblio exposes no public API to
+  rate-limit. There is no developer portal, no API reference, and no base URL
+  anywhere on the surviving surface. The only "API" language found in Triblio's
+  own material is about consuming OTHER vendors' APIs — a Salesforce REST
+  authorization, a Marketo REST connection, a G2 intent API key pasted into the
+  platform's Setup > "Web Sites & API" tab. Those are inbound credentials for
+  third-party services, not a Triblio API contract, and they carry no Triblio
+  rate limit. limit_count is 0 by measurement.
+
+rate_limits: []
+response_headers: []
+
+evidence:
+  - url: https://foundryco.com/developers/
+    status: 200
+    note: >-
+      Foundry's only developer portal. It documents the KickFire APIs
+      (api.kickfire.com) exclusively — a different Foundry product. Not
+      attributed to Triblio; see the ownership note in apis.yml x-coverage.
+  - url: https://learning.foundryco.com/hc/en-us
+    status: 403
+    note: >-
+      The migrated Triblio knowledge base (CNAME triblio.zendesk.com). Cloudflare
+      "error code: 1034" on every path, including the anonymous Zendesk Help
+      Center API.
+  - url: https://learning.triblio.com/
+    status: null
+    note: Original knowledge base host — DNS failure, no A record.
+
+checked: '2026-08-12'

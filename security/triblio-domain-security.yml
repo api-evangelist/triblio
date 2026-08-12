@@ -1,0 +1,94 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  Direct DNS and TLS probes of triblio.com and its subdomains against 8.8.8.8
+  and against the domain's own delegated authoritative nameservers, plus a
+  registry WHOIS lookup.
+name: Triblio — domain security posture
+slug: triblio
+
+reachable: false
+
+summary: >-
+  triblio.com cannot be assessed for TLS, HSTS, DNSSEC, CAA, SPF or DMARC
+  because the domain serves no DNS at all. The registration is alive and
+  defensively locked — MarkMonitor, expiring 2027-03-19, with clientDelete,
+  clientTransfer and clientUpdate prohibited — and the registry still delegates
+  the zone to four Amazon Route 53 nameservers. Those nameservers answer REFUSED
+  for triblio.com, which is what Route 53 returns when the hosted zone behind a
+  delegation has been deleted. The result is a registered, locked, brand-
+  protected domain with an empty delegation: no A, no MX, no TXT, no SOA. That
+  is the decisive evidence that the Triblio web surface was decommissioned
+  rather than redirected.
+
+registration:
+  registrar: MarkMonitor Inc.
+  created: '2013-03-19'
+  updated: '2026-02-15'
+  expires: '2027-03-19'
+  status:
+    - clientDeleteProhibited
+    - clientTransferProhibited
+    - clientUpdateProhibited
+  note: >-
+    Registrar and lock set are consistent with a corporate brand-protection
+    holding, which is how Foundry/IDG would park an absorbed brand.
+
+delegation:
+  nameservers:
+    - ns-246.awsdns-30.com
+    - ns-515.awsdns-00.net
+    - ns-1356.awsdns-41.org
+    - ns-1562.awsdns-03.co.uk
+  authoritative_response: REFUSED
+  note: >-
+    Queried ns-246.awsdns-30.com directly for triblio.com A and SOA. Both
+    returned status REFUSED with zero answer and zero authority records — the
+    Route 53 hosted zone no longer exists.
+
+records:
+  a: []
+  mx: []
+  txt: []
+  soa: null
+  caa: null
+  dnssec: null
+
+checks:
+  tls: not-assessable
+  hsts: not-assessable
+  dnssec: not-assessable
+  caa: not-assessable
+  spf: not-assessable
+  dmarc: not-assessable
+  note: >-
+    "not-assessable" is distinct from "absent". No connection can be opened to a
+    host that does not resolve, so recording these as failures would be a false
+    negative about the provider's security posture rather than a measurement.
+
+subdomains_probed:
+  - host: www.triblio.com
+    resolves: false
+  - host: app.triblio.com
+    resolves: false
+  - host: api.triblio.com
+    resolves: false
+  - host: learning.triblio.com
+    resolves: false
+
+successor_hosts:
+  - host: learning.foundryco.com
+    resolves: true
+    cname: triblio.zendesk.com
+    note: >-
+      The only surviving host that is unambiguously Triblio's own — the Zendesk
+      instance is still named "triblio". Fronted by Cloudflare, which returns
+      403 to every automated request.
+  - host: intent.foundryco.com
+    resolves: true
+    cname: intent-web-1606417831.us-east-1.elb.amazonaws.com
+    note: >-
+      Foundry Intent application. AWS ELB answers 503 on every path including
+      /login, across repeated probes.
+
+checked: '2026-08-12'

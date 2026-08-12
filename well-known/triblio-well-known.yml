@@ -1,0 +1,247 @@
+generated: '2026-08-12'
+method: probed
+source: >-
+  Direct HTTP probes of every host in apis.yml plus the live successor hosts
+  discovered during this pass (foundryco.com, intent.foundryco.com,
+  learning.foundryco.com / triblio.zendesk.com).
+name: Triblio — .well-known probe
+slug: triblio
+
+summary: >-
+  No /.well-known document of any kind is served for Triblio. The company's own
+  domain no longer resolves at all — triblio.com is still registered to
+  MarkMonitor and delegated to four Route 53 nameservers, but those nameservers
+  answer REFUSED, meaning the hosted zone has been deleted. Every triblio.com
+  host (apex, www, app, api, learning) therefore fails DNS resolution rather
+  than returning a status code. On the surviving successor hosts, foundryco.com
+  returns a WordPress 404 HTML page for every well-known path, the Foundry
+  Intent application load balancer returns 503 on every path, and the Zendesk
+  knowledge base sits behind a Cloudflare bot challenge. NO WellKnown or
+  SecurityTxt pointer is emitted: this file documents an absence, not a
+  presence.
+
+hosts_probed:
+  - host: www.triblio.com
+    resolves: false
+    note: >-
+      NXDOMAIN / no A record. Route 53 hosted zone deleted — the delegated
+      nameservers (ns-246.awsdns-30.com and siblings) answer REFUSED for the
+      zone.
+  - host: triblio.com
+    resolves: false
+    note: Same as www — no A record, zone deleted.
+  - host: app.triblio.com
+    resolves: false
+    note: Former Triblio application login host (app.triblio.com/login). Gone.
+  - host: api.triblio.com
+    resolves: false
+    note: Probed on the chance an API host existed. Never resolved; no Wayback record.
+  - host: learning.triblio.com
+    resolves: false
+    note: >-
+      Former knowledge base host. Still cited by live third-party pages and by
+      Foundry's own product page, but no longer resolves.
+  - host: foundryco.com
+    resolves: true
+    note: Parent brand site (Cloudflare + WordPress). Serves an HTML 404 for every well-known path.
+  - host: intent.foundryco.com
+    resolves: true
+    note: >-
+      Foundry Intent application (AWS ELB intent-web-1606417831.us-east-1.elb.amazonaws.com).
+      Returns awselb/2.0 503 on every path including /login — no healthy targets.
+  - host: learning.foundryco.com
+    resolves: true
+    note: >-
+      The migrated knowledge base. CNAMEs to triblio.zendesk.com — the Zendesk
+      instance is still literally named "triblio", which is what confirms it is
+      Triblio's own surface. Cloudflare answers 403 "error code: 1034" /
+      "Just a moment..." to every request, including the anonymous Zendesk Help
+      Center API.
+
+probes:
+  - host: www.triblio.com
+    path: /.well-known/security.txt
+    status: null
+    result: dns-failure
+    file: null
+  - host: www.triblio.com
+    path: /.well-known/openid-configuration
+    status: null
+    result: dns-failure
+    file: null
+  - host: www.triblio.com
+    path: /.well-known/oauth-authorization-server
+    status: null
+    result: dns-failure
+    file: null
+  - host: www.triblio.com
+    path: /.well-known/api-catalog
+    status: null
+    result: dns-failure
+    file: null
+  - host: www.triblio.com
+    path: /.well-known/ai-plugin.json
+    status: null
+    result: dns-failure
+    file: null
+  - host: www.triblio.com
+    path: /.well-known/agent-card.json
+    status: null
+    result: dns-failure
+    file: null
+  - host: www.triblio.com
+    path: /llms.txt
+    status: null
+    result: dns-failure
+    file: null
+  - host: www.triblio.com
+    path: /openapi.json
+    status: null
+    result: dns-failure
+    file: null
+
+  - host: foundryco.com
+    path: /.well-known/security.txt
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /.well-known/openid-configuration
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /.well-known/oauth-authorization-server
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /.well-known/api-catalog
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /.well-known/ai-plugin.json
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /.well-known/agent-card.json
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /.well-known/agent.json
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /llms.txt
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /openapi.json
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /swagger.json
+    status: 404
+    result: html-404
+    file: null
+  - host: foundryco.com
+    path: /api-docs
+    status: 404
+    result: html-404
+    file: null
+
+  - host: intent.foundryco.com
+    path: /.well-known/security.txt
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /.well-known/openid-configuration
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /.well-known/oauth-authorization-server
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /.well-known/oauth-protected-resource
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /.well-known/api-catalog
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /.well-known/agent-card.json
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /.well-known/agent.json
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /openapi.json
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /graphql
+    status: 503
+    result: elb-503
+    file: null
+  - host: intent.foundryco.com
+    path: /llms.txt
+    status: 503
+    result: elb-503
+    file: null
+
+  - host: triblio.zendesk.com
+    path: /hc/en-us
+    status: 403
+    result: cloudflare-bot-challenge
+    file: null
+  - host: triblio.zendesk.com
+    path: /api/v2/help_center/en-us/categories.json
+    status: 404
+    result: help-center-api-not-exposed
+    file: null
+  - host: learning.foundryco.com
+    path: /hc/en-us
+    status: 403
+    result: cloudflare-error-1034
+    file: null
+  - host: learning.foundryco.com
+    path: /api/v2/help_center/articles/search.json?query=API
+    status: 403
+    result: cloudflare-error-1034
+    file: null
+
+results:
+  security_txt: false
+  openid_configuration: false
+  oauth_authorization_server: false
+  oauth_protected_resource: false
+  api_catalog: false
+  ai_plugin: false
+  agent_card: false
+  llms_txt: false
+  hit_count: 0
+
+pointer_emitted: false
+pointer_note: >-
+  Zero paths returned a 200 carrying a real document, so no WellKnown and no
+  SecurityTxt pointer is wired into apis.yml. Recording the probe is the finding;
+  asserting the pointer would credit Triblio with a surface it does not serve.
+checked: '2026-08-12'
