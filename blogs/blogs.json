@@ -2,11 +2,18 @@
   "repo": "triblio",
   "feeds": [
     {
+      "source": "https://bombora.com/integration/triblio/",
+      "feed_url": "https://bombora.com/integration/triblio/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://www.triblio.com/company/about",
       "error": "URLError"
     }
   ],
-  "fetched": "2026-08-06T14:08:46Z",
+  "fetched": "2026-08-22T20:20:02Z",
   "post_count": 0,
   "agent_pulled": "2026-07-04"
 }
