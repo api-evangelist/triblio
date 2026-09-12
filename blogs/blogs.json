@@ -11,9 +11,16 @@
     {
       "source": "https://www.triblio.com/company/about",
       "error": "URLError"
+    },
+    {
+      "source": "https://bombora.com/feed/",
+      "feed_url": "https://bombora.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "fetched": "2026-08-30T22:33:40Z",
-  "post_count": 0,
+  "fetched": "2026-09-06T19:17:18Z",
+  "post_count": 10,
   "agent_pulled": "2026-07-04"
 }
