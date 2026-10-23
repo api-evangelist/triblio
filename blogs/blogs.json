@@ -13,6 +13,13 @@
       "error": "URLError"
     },
     {
+      "source": "https://foundryco.com/blog/feed/",
+      "feed_url": "https://foundryco.com/blog/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
+    },
+    {
       "source": "https://bombora.com/feed/",
       "feed_url": "https://bombora.com/feed/",
       "title": "",
@@ -20,7 +27,7 @@
       "method": "feed"
     }
   ],
-  "fetched": "2026-10-10T13:15:00Z",
+  "fetched": "2026-10-17T14:53:57Z",
   "post_count": 21,
   "agent_pulled": "2026-07-04"
 }
